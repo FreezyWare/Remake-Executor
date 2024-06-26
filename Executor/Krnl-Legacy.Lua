@@ -37,11 +37,6 @@ local function RandomizeNames(parent)
 	end
 end
 
-if Krnl and Krnl.Parent then
-	Krnl:Destroy()
-	Krnl = nil
-end
-
 Krnl.Name = tostring(math.random(100000, 999999))
 Krnl.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
