@@ -1,3 +1,6 @@
+local ToggleKeybind = Enum.KeyCode.RightAlt
+local DeleteKeybind = Enum.KeyCode.Delete
+
 local Krampus = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local TopBar = Instance.new("Frame")
@@ -256,8 +259,6 @@ Button3_2.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button3_2.TextSize = 16.000
 
 local injected = false
-local ToggleKeybind = Enum.KeyCode.RightAlt
-local DeleteKeybind = Enum.KeyCode.Delete
 
 UserInputService.InputBegan:Connect(function(input)
 	if input.KeyCode == DeleteKeybind then
