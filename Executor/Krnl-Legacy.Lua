@@ -1,3 +1,6 @@
+local ToggleKeybind = Enum.KeyCode.RightAlt
+local DeleteKeybind = Enum.KeyCode.Delete
+
 local Krnl = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Header = Instance.new("Frame")
@@ -36,11 +39,6 @@ local function RandomizeNames(parent)
 			obj.Name = tostring(math.random(100000, 999999))
 		end
 	end
-end
-
-if Krnl and Krnl.Parent then
-	Krnl:Destroy()
-	Krnl = nil
 end
 
 Krnl.Name = tostring(math.random(100000, 999999))
@@ -368,9 +366,6 @@ local injected = false
 CloseBtn.MouseButton1Click:connect(function()
 	Krnl:Destroy()
 end)
-
-local ToggleKeybind = Enum.KeyCode.RightAlt
-local DeleteKeybind = Enum.KeyCode.Delete
 
 UserInputService.InputBegan:Connect(function(input)
 	if input.KeyCode == DeleteKeybind then
