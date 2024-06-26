@@ -31,4 +31,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FreezyWare/Remake-Exe
 Krampus:
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FreezyWare/Remake-Executor/main/Executor/Krampus.Lua"))()
+-- Delete UI (Press Delete key)
+-- Toggle UI (Press P key)
 ```
