@@ -1,9 +1,3 @@
-local Krnl = game.Players.LocalPlayer.PlayerGui:FindFirstChild("Krnl")
-if Krnl then
-	Krnl.Enabled = true
-	return 
-end
-
 local Krnl = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Header = Instance.new("Frame")
@@ -35,12 +29,23 @@ local Button2_2 = Instance.new("TextButton")
 local Button3_2 = Instance.new("TextButton")
 local Button4_2 = Instance.new("TextButton")
 
+local function RandomizeNames(parent)
+	for _, obj in ipairs(parent:GetDescendants()) do
+		if obj:IsA("GuiObject") then
+			obj.Name = tostring(math.random(100000, 999999))
+		end
+	end
+end
 
+if Krnl and Krnl.Parent then
+	Krnl:Destroy()
+	Krnl = nil
+end
 
-Krnl.Name = "Krnl"
+Krnl.Name = tostring(math.random(100000, 999999))
 Krnl.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-Main.Name = "Main"
+Main.Name = tostring(math.random(100000, 999999))
 Main.Parent = Krnl
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
@@ -52,7 +57,7 @@ Main.Draggable = true
 Main.Active = true
 Main.Selectable = true
 
-Header.Name = "Header"
+Header.Name = tostring(math.random(100000, 999999))
 Header.Parent = Main
 Header.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
 Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -60,7 +65,7 @@ Header.BorderSizePixel = 0
 Header.ClipsDescendants = true
 Header.Size = UDim2.new(1, 0, 0, 30)
 
-Icon.Name = "Icon"
+Icon.Name = tostring(math.random(100000, 999999))
 Icon.Parent = Header
 Icon.AnchorPoint = Vector2.new(0.5, 0.5)
 Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,7 +77,7 @@ Icon.Position = UDim2.new(0, 15, 0.5, 0)
 Icon.Size = UDim2.new(0, 30, 1, 0)
 Icon.Image = "rbxassetid://18189266691"
 
-Title.Name = "Title"
+Title.Name = tostring(math.random(100000, 999999))
 Title.Parent = Header
 Title.AnchorPoint = Vector2.new(0.5, 0.5)
 Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -87,7 +92,7 @@ Title.Text = "KRNL"
 Title.TextColor3 = Color3.fromRGB(230, 230, 230)
 Title.TextSize = 16.000
 
-CloseBtn.Name = "CloseBtn"
+CloseBtn.Name = tostring(math.random(100000, 999999))
 CloseBtn.Parent = Header
 CloseBtn.AnchorPoint = Vector2.new(1, 0.5)
 CloseBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -99,7 +104,7 @@ CloseBtn.Position = UDim2.new(1, -5, 0.5, 0)
 CloseBtn.Size = UDim2.new(0, 20, 0, 20)
 CloseBtn.Image = "rbxassetid://10747384394"
 
-MinimizeBtn.Name = "MinimizeBtn"
+MinimizeBtn.Name = tostring(math.random(100000, 999999))
 MinimizeBtn.Parent = Header
 MinimizeBtn.AnchorPoint = Vector2.new(1, 0.5)
 MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -111,7 +116,7 @@ MinimizeBtn.Position = UDim2.new(1, -40, 0.5, 0)
 MinimizeBtn.Size = UDim2.new(0, 20, 0, 20)
 MinimizeBtn.Image = "rbxassetid://10734896206"
 
-Main2.Name = "Main2"
+Main2.Name = tostring(math.random(100000, 999999))
 Main2.Parent = Main
 Main2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Main2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -124,7 +129,7 @@ UIListLayout.Parent = Main2
 UIListLayout.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-Button5.Name = "Button5"
+Button5.Name = tostring(math.random(100000, 999999))
 Button5.Parent = Main2
 Button5.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Button5.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -136,7 +141,7 @@ Button5.Text = "Others"
 Button5.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button5.TextSize = 14.000
 
-Button1.Name = "Button1"
+Button1.Name = tostring(math.random(100000, 999999))
 Button1.Parent = Main2
 Button1.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Button1.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -148,7 +153,7 @@ Button1.Text = "File"
 Button1.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button1.TextSize = 14.000
 
-Button2.Name = "Button2"
+Button2.Name = tostring(math.random(100000, 999999))
 Button2.Parent = Main2
 Button2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Button2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -160,7 +165,7 @@ Button2.Text = "Credits"
 Button2.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button2.TextSize = 14.000
 
-Button3.Name = "Button3"
+Button3.Name = tostring(math.random(100000, 999999))
 Button3.Parent = Main2
 Button3.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Button3.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -172,7 +177,7 @@ Button3.Text = "Games"
 Button3.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button3.TextSize = 14.000
 
-Button4.Name = "Button4"
+Button4.Name = tostring(math.random(100000, 999999))
 Button4.Parent = Main2
 Button4.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Button4.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -184,7 +189,7 @@ Button4.Text = "Hot-Scripts"
 Button4.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button4.TextSize = 14.000
 
-Content.Name = "Content"
+Content.Name = tostring(math.random(100000, 999999))
 Content.Parent = Main
 Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Content.BackgroundTransparency = 1.000
@@ -213,7 +218,7 @@ UIPadding.Parent = TextBox
 UIPadding.PaddingLeft = UDim.new(0, 5)
 UIPadding.PaddingTop = UDim.new(0, 5)
 
-ScriptHub.Name = "ScriptHub"
+ScriptHub.Name = tostring(math.random(100000, 999999))
 ScriptHub.Parent = Content
 ScriptHub.AnchorPoint = Vector2.new(1, 0)
 ScriptHub.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
@@ -222,7 +227,7 @@ ScriptHub.BorderSizePixel = 0
 ScriptHub.Position = UDim2.new(1, 0, 0, 0)
 ScriptHub.Size = UDim2.new(1, -445, 1, 0)
 
-Content_2.Name = "Content"
+Content_2.Name = tostring(math.random(100000, 999999))
 Content_2.Parent = ScriptHub
 Content_2.Active = true
 Content_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -235,7 +240,7 @@ Content_2.BottomImage = ""
 Content_2.ScrollBarThickness = 3
 Content_2.TopImage = ""
 
-Script1.Name = "Script1"
+Script1.Name = tostring(math.random(100000, 999999))
 Script1.Parent = Content_2
 Script1.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Script1.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -252,7 +257,7 @@ UIListLayout_2.Parent = Content_2
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_2.Padding = UDim.new(0, 3)
 
-Script2.Name = "Script2"
+Script2.Name = tostring(math.random(100000, 999999))
 Script2.Parent = Content_2
 Script2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Script2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -265,7 +270,7 @@ Script2.Text = "CMD"
 Script2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Script2.TextSize = 14.000
 
-Script3.Name = "Script3"
+Script3.Name = tostring(math.random(100000, 999999))
 Script3.Parent = Content_2
 Script3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Script3.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -278,7 +283,7 @@ Script3.Text = "Aimbot"
 Script3.TextColor3 = Color3.fromRGB(255, 255, 255)
 Script3.TextSize = 14.000
 
-Script4.Name = "Script4"
+Script4.Name = tostring(math.random(100000, 999999))
 Script4.Parent = Content_2
 Script4.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Script4.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -291,7 +296,7 @@ Script4.Text = "ESP"
 Script4.TextColor3 = Color3.fromRGB(255, 255, 255)
 Script4.TextSize = 14.000
 
-ButtonHolder.Name = "ButtonHolder"
+ButtonHolder.Name = tostring(math.random(100000, 999999))
 ButtonHolder.Parent = Main
 ButtonHolder.AnchorPoint = Vector2.new(0, 1)
 ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -307,7 +312,7 @@ UIListLayout_3.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_3.Padding = UDim.new(0, 4)
 
-Button1_2.Name = "Button1"
+Button1_2.Name = tostring(math.random(100000, 999999))
 Button1_2.Parent = ButtonHolder
 Button1_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 Button1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -319,7 +324,7 @@ Button1_2.Text = "EXECUTE"
 Button1_2.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button1_2.TextSize = 14.000
 
-Button2_2.Name = "Button2"
+Button2_2.Name = tostring(math.random(100000, 999999))
 Button2_2.Parent = ButtonHolder
 Button2_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 Button2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -331,7 +336,7 @@ Button2_2.Text = "CLEAR"
 Button2_2.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button2_2.TextSize = 14.000
 
-Button3_2.Name = "Button3"
+Button3_2.Name = tostring(math.random(100000, 999999))
 Button3_2.Parent = ButtonHolder
 Button3_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 Button3_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -343,7 +348,7 @@ Button3_2.Text = "INJECT"
 Button3_2.TextColor3 = Color3.fromRGB(230, 230, 230)
 Button3_2.TextSize = 14.000
 
-Button4_2.Name = "Button4"
+Button4_2.Name = tostring(math.random(100000, 999999))
 Button4_2.Parent = Main
 Button4_2.AnchorPoint = Vector2.new(1, 1)
 Button4_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
@@ -363,10 +368,12 @@ CloseBtn.MouseButton1Click:connect(function()
 	Krnl:Destroy()
 end)
 
+local MiniKeybind = Enum.KeyCode.P
+
 MinimizeBtn.MouseButton1Click:Connect(function()
 	Main.Visible = false
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
-		if input.KeyCode == Enum.KeyCode.P then
+		if input.KeyCode == MiniKeybind then
 			if Main.Visible == false then
 				Main.Visible = true
 			end
