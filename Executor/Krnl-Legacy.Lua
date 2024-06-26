@@ -28,6 +28,7 @@ local Button1_2 = Instance.new("TextButton")
 local Button2_2 = Instance.new("TextButton")
 local Button3_2 = Instance.new("TextButton")
 local Button4_2 = Instance.new("TextButton")
+local UserInputService = game:GetService("UserInputService")
 
 local function RandomizeNames(parent)
 	for _, obj in ipairs(parent:GetDescendants()) do
@@ -35,6 +36,11 @@ local function RandomizeNames(parent)
 			obj.Name = tostring(math.random(100000, 999999))
 		end
 	end
+end
+
+if Krnl and Krnl.Parent then
+	Krnl:Destroy()
+	Krnl = nil
 end
 
 Krnl.Name = tostring(math.random(100000, 999999))
@@ -363,12 +369,19 @@ CloseBtn.MouseButton1Click:connect(function()
 	Krnl:Destroy()
 end)
 
-local MiniKeybind = Enum.KeyCode.P
+local ToggleKeybind = Enum.KeyCode.RightAlt
+local DeleteKeybind = Enum.KeyCode.Delete
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == DeleteKeybind then
+		Krnl:Destroy()
+	end
+end)
 
 MinimizeBtn.MouseButton1Click:Connect(function()
 	Main.Visible = false
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
-		if input.KeyCode == MiniKeybind then
+		if input.KeyCode == ToggleKeybind then
 			if Main.Visible == false then
 				Main.Visible = true
 			end
