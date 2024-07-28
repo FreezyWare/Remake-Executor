@@ -1,4 +1,4 @@
-local ToggleKeybind = Enum.KeyCode.RightAlt
+local ToggleKeybind = Enum.KeyCode.Insert
 local DeleteKeybind = Enum.KeyCode.Delete
 
 local Krampus = Instance.new("ScreenGui")
