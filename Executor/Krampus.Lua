@@ -35,6 +35,7 @@ end
 
 Krampus.Name = tostring(math.random(100000, 999999))
 Krampus.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Krampus.ResetOnSpawn = false
 
 Main.Name = tostring(math.random(100000, 999999))
 Main.Parent = Krampus
